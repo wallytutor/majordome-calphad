@@ -1,4 +1,4 @@
-# majordome-sample
+# majordome-calphad
 
 Crate providing Calphad models to the Majordome stack.
 

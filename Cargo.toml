@@ -10,10 +10,19 @@ keywords = ["database", "properties", "chemical", " thermodynamics"]
 categories = ["science"]
 
 [lib]
-name = "majordome_sample"
+name = "majordome_calphad"
 path = "src/lib.rs"
 crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+majordome_constants = { git = "https://github.com/wallytutor/majordome-constants.git", package = "majordome-constants" }
+majordome_numerical = { git = "https://github.com/wallytutor/majordome-numerical.git", package = "majordome-numerical" }
+majordome_utilities = { git = "https://github.com/wallytutor/majordome-utilities.git", package = "majordome-utilities" }
 
 [dependencies.pyo3]
 version = "0.28.2"
 features = ["extension-module", "abi3-py312", "multiple-pymethods"]
+
+[dependencies.mlua]
+version = "0.11"
+features = ["lua54", "vendored"]

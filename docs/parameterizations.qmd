@@ -1,6 +1,7 @@
 # Parameterizations
 
 ```{python}
+from majordome_calphad import DatabaseLoader
 import sympy as sm
 ```
 
@@ -28,4 +29,20 @@ H.expand().as_coefficients_dict()
 ```{python}
 c = sm.diff(H, T)
 c.expand().as_coefficients_dict()
+```
+
+
+```{python}
+h_ref = 209900.0
+s_ref = 10.06
+cp = 11.22 + 8.2e-03 * T - 2.7e+05 * T**(-2)
+sm.lambdify([T], 4.18*cp)(300)
+```
+
+
+```{python}
+name = "QUARTZ_ALPHA"
+db = DatabaseLoader("silica.lua", phases=[name])
+phase = db.get_data()[name]
+print(phase.report(300.0))
 ```

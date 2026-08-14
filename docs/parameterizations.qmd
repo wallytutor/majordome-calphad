@@ -1,0 +1,31 @@
+# Parameterizations
+
+```{python}
+import sympy as sm
+```
+
+## Gibbs energy function
+
+```{python}
+T = sm.symbols("T")
+a, b, c, d, e, f, g = sm.symbols("a b c d e f g")
+
+G = a + b*T + c*T*sm.log(T) + d*T**2 + e*T**3 + f*T**4 + g/T
+G.expand().as_coefficients_dict()
+```
+
+```{python}
+S = -sm.diff(G, T)
+S.expand().as_coefficients_dict()
+```
+
+```{python}
+H = G + T * S
+H.expand().as_coefficients_dict()
+```
+
+
+```{python}
+c = sm.diff(H, T)
+c.expand().as_coefficients_dict()
+```

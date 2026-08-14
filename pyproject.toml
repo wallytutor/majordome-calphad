@@ -9,6 +9,12 @@ authors = [
 requires-python = ">=3.12"
 dependencies = ["majordome-build"]
 
+[project.optional-dependencies]
+docs = [
+    "ipykernel>=7.3.0",
+    "sympy>=1.14.0",
+]
+
 [tool.maturin]
 module-name = "majordome_calphad.calphad"
 python-packages = ["majordome_calphad"]

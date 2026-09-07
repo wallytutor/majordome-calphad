@@ -14,10 +14,20 @@ name = "majordome_calphad"
 path = "src/lib.rs"
 crate-type = ["cdylib", "rlib"]
 
-[dependencies]
-majordome_constants = { git = "https://github.com/wallytutor/majordome-constants.git", package = "majordome-constants" }
-majordome_numerical = { git = "https://github.com/wallytutor/majordome-numerical.git", package = "majordome-numerical" }
-majordome_utilities = { git = "https://github.com/wallytutor/majordome-utilities.git", package = "majordome-utilities" }
+[dependencies.majordome_constants]
+# git = "https://github.com/wallytutor/majordome-constants.git"
+path = "../majordome-constants"
+package = "majordome-constants"
+
+[dependencies.majordome_numerical]
+# git = "https://github.com/wallytutor/majordome-numerical.git"
+path = "../majordome-numerical"
+package = "majordome-numerical"
+
+[dependencies.majordome_utilities]
+# git = "https://github.com/wallytutor/majordome-utilities.git"
+path = "../majordome-utilities"
+package = "majordome-utilities"
 
 [dependencies.pyo3]
 version = "0.28.2"
